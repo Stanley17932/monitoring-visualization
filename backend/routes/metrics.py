@@ -27,7 +27,7 @@ def get_host_metrics(host_name):
     
     query = {
         'host_name': host_name,
-        # 'timestamp': {'$gte': since}
+        'timestamp': {'$gte': since}
     }
     print(f"Executing Query: {query}")
     
