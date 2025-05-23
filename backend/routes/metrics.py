@@ -16,7 +16,7 @@ def add_metrics():
         'disk_usage': data['disk_usage'],
         'timestamp': datetime.utcnow()
     }
-    mongo.db.metrics.insert_one(metrics_data)
+    mongo.db.metricsdata.insert_one(metrics_data)
     return jsonify({'message': 'Metrics recorded successfully'}), 201
 
 @metrics.route('/metrics/<host_name>', methods=['GET'])
@@ -31,7 +31,7 @@ def get_host_metrics(host_name):
     }
     print(f"Executing Query: {query}")
     
-    metrics = mongo.db.metrics.find(query)
+    metrics = mongo.db.metricsdata.find(query)
     metrics_list = list(metrics)
     print(f"Query Results: {metrics_list}")
     

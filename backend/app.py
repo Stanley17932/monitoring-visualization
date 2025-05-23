@@ -38,3 +38,8 @@ app = create_app()
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# print(f"MongoDB URI: {app.config['MONGO_URI']}")
+# print(f"MongoDB instance: {mongo}")
+# print(f"collection names: {mongo.db.list_collection_names()}")
